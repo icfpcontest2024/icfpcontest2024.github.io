@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/papercss@1.9.2/dist/paper.min.css"
+      />
+    <link rel="stylesheet" href="css/icfpc2024.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="icfpc2024.29091e3c142f45c3bd9d.js"></script>
+    <title>ICFP contest 2024 - team</title>
+  </head>
+  <body>
+    <nav class="border fixed split-nav">
+      <div class="nav-brand">
+	<h3><a href="/"><img src="img/icfpc2024.png" class="logo no-border" />&nbsp;ICFPC 2024</a></h3>
+      </div>
+      <div class="collapsible">
+	<input id="collapsible1" type="checkbox" name="collapsible1">
+	<label for="collapsible1">
+	  <div class="bar1"></div>
+	  <div class="bar2"></div>
+	  <div class="bar3"></div>
+	</label>
+	<div class="collapsible-body">
+	  <ul class="inline">
+            <li><a href="/">Home</a></li>
+            <li><a href="/task.html">Task</a></li>
+            <li><a href="/scoreboard.html">Scoreboard</a></li>
+            <li><a href="/rules.html">Rules</a></li>
+            <li><a href="/prizes.html">Prizes</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="#" id="loginlink"></a></li>
+	  </ul>
+	</div>
+      </div>
+    </nav>
+    <div class="paper container margin-top">
+      <div class="row">
+	<div class="col-4 col"><img class="top-img" src="img/endo.png" /></div>
+	<div class="col-4 col"><img class="top-img" src="img/galaxy.png" /></div>
+	<div class="col-4 col"><img class="top-img" src="img/universalmachine.png" /></div>
+      </div>
+      <h1>Team</h1>
+      <div id="teampage">
+	<p>
+	  You are logged in as: <span id="teamname">...</span> (<a id="logout" href="#">Log out</a>)
+	</p>
+	<p>
+	  To submit, add the following header to your request:<br><br>
+	  <code id="teamtoken">...</code><br><br>
+	  <em>Important</em>: This is your private API token, do not share this with anyone outside your team!<br><br>
+	  <button id="refreshapitoken">Regenerate API token</button>
+	</p>
+
+	<h2>Update</h2>
+	<form id="updateform">
+	  <div class="form-group">
+	    <label for="name">Team name</label>
+	    <input type="text" id="name" required>
+	  </div>
+	  <div class="form-group">
+	    <label for="email">Email</label>
+	    <input type="email" autocomplete="autocomplete" id="email" required>
+	  </div>
+	  <div class="form-group">
+	    <label for="cur-password">Current password</label>
+	    <input type="password" autocomplete="current-password" id="cur-password" required>
+	  </div>
+	  <div class="form-group">
+	    <label for="new-password">New password (leave blank to keep current)</label>
+	    <input type="password" autocomplete="new-password" id="new-password">
+	  </div>
+	  <div class="form-group">
+	    <input type="submit" id="updatebutton" value="Update">
+	  </div>
+	</form>
+
+	<h2>Code submit</h2>
+	<p>
+	  Teams that want to be considered for the <a href="prizes.html">prizes</a> must submit the code they wrote to generate their solutions, for the jury to judge. We kindly ask you to host the code elsewhere and send us a link, e.g. a Github repository, Google Drive folder, Dropbox link, etc. We'll try to access this in the days after the contest, so it is fine to send us the repository link during the contest but only make it public after the contest has ended (and we will contact you in case we can't download the code).
+	</p>
+	<p>
+	  To make jury life easier, please include a small README giving an overview of the solution and which parts were written during the first 24 hours of the contest.
+	</p>
+	<form id="codesubmitform">
+	  <div class="form-group">
+	    <label for="url">Code url:</label>
+	    <input type="text" id="url" required>
+	  </div>
+	  <div class="form-group">
+	    <label for="language">Used language(s) (which will be included as such in our prize statements):</label>
+	    <input type="text" id="language" required>
+	  </div>
+	  <div class="form-group">
+	    <label for="jury-prize">We should win the jury prize because</label>
+	    <textarea id="jury-prize" placeholder="e.g. we used Haskell"></textarea>
+	  </div>
+	  <div class="form-group">
+	    <input type="submit" id="codesubmit" value="Submit">
+	  </div>
+	</form>
+      </div>
+    </div>
+  </body>
+</html>
