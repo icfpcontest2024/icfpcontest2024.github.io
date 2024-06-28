@@ -45,6 +45,7 @@
 	<div class="col-4 col"><img class="top-img" src="img/universalmachine.png" /></div>
       </div>
       <div id="languagepage">
+
 <h1 id="icfp-language">ICFP language</h1>
 <p>An <em>Interstellar Communication Functional Program</em> (ICFP) consists of a list of space-separated <em>tokens</em>. A <em>token</em> consists of one or more printable ASCII characters, from ASCII code 33 (&#39;<code>!</code>&#39;) up to and including code 126 (&#39;<code>~</code>&#39;). In other words, there are 94 possible characters, and a <em>token</em> is a nonempty sequence of such characters.</p>
 <p>The first character of a <em>token</em> is called the <em>indicator</em>, and determines the type of the <em>token</em>. The (possibly empty) remainder of the <em>token</em> is called <em>body</em>. The different <em>token</em> types are explained in the next subsections.</p>
@@ -102,8 +103,8 @@
 </code></pre>
 <p>evaluates to <code>no</code>.</p>
 <h2 id="lambda-abstractions">Lambda abstractions</h2>
-<p><code>indicator = L</code> is a lambda abstraction, where the <em>body</em> should be interpreted as a base-94 number in the same way as <a href="#integers">integers</a>, which is the variable number. <code>indicator = v</code> is a variable, with again a <em>body</em> being the base-94 variable number.</p>
-<p>When a lambda abstraction appears as the first argument of the binary application operator <code>$</code>, the second argument of the application is assigned to that variable. For example, the ICFP</p>
+<p><code>indicator = L</code> is a lambda abstraction, where the <em>body</em> should be interpreted as a base-94 number in the same way as <a href="#integers">integers</a>, which is the variable number, and it takes one ICFP as argument. <code>indicator = v</code> is a variable, with again a <em>body</em> being the base-94 variable number.</p>
+<p>When the first argument of the binary application operator <code>$</code> evaluates to a lambda abstraction, the second argument of the application is assigned to that variable. For example, the ICFP</p>
 <pre><code>B$ B$ L# L$ v# B. SB%,,/ S}Q/2,$_ IK
 </code></pre>
 <p>represents the program (e.g. in Haskell-style)</p>
